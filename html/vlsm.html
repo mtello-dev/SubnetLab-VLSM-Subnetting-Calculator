@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SubnetLab — Calculadora VLSM</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/vlsm.css">
+
+</head>
+
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <div class="container">
+
+        <header id="inicio">
+
+            <div class="logo-badge">
+                λ
+            </div>
+
+            <div class="header-text">
+
+                <h1>
+                    VLSM<span>Lab</span>
+                </h1>
+
+                <p>
+                    // variable length subnet masking
+                </p>
+
+            </div>
+
+        </header>
+
+        <div class="info-banner">
+
+            <div class="info-icon">
+                ℹ
+            </div>
+
+            <p>
+
+                <strong>VLSM</strong>
+                permite dividir una red en subredes de distintos tamaños.
+
+            </p>
+
+        </div>
+
+        <div class="input-panel" data-section="base">
+
+            <h2>// Red Base</h2>
+
+            <div class="input-row">
+
+                <div class="field">
+
+                    <label>Dirección de Red</label>
+
+                    <input type="text" id="baseIp" placeholder="192.168.1.0">
+
+                </div>
+
+                <div class="field">
+
+                    <label>Prefijo CIDR</label>
+
+                    <select id="baseCidr">
+
+                        <option value="24" selected>
+                            /24
+                        </option>
+
+                        <option value="25">/25</option>
+                        <option value="26">/26</option>
+                        <option value="27">/27</option>
+                        <option value="28">/28</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="input-panel" data-section="reqs">
+
+            <div class="req-header">
+
+                <h2>// Requerimientos de Hosts</h2>
+
+                <button class="add-btn" onclick="addRequirement()">
+
+                    + Agregar subred
+
+                </button>
+
+            </div>
+
+            <div id="reqList"></div>
+
+            <div class="vlsm-actions">
+
+                <button class="calc-btn" onclick="calculateVLSM()">
+
+                    Calcular VLSM →
+
+                </button>
+
+                <button class="clear-btn" onclick="clearAll()">
+
+                    Limpiar todo
+
+                </button>
+
+            </div>
+
+            <div id="vlsmError" class="error-msg">
+
+            </div>
+
+        </div>
+
+        <div class="vlsm-results" id="vlsmResults" style="display:none">
+
+            <div class="summary-panel">
+
+                <h2>// Resumen de Uso</h2>
+
+                <div id="summaryGrid"></div>
+
+                <div class="usage-bar-wrap">
+
+                    <div id="usageBar"></div>
+
+                </div>
+
+                <div id="usageLabels"></div>
+
+            </div>
+
+            <div class="vlsm-table-panel">
+
+                <div class="subnets-header">
+
+                    <h2>// Asignación de Subredes</h2>
+
+                    <div>
+
+                        <button class="export-btn" onclick="exportCSV()">
+
+                            ↓ CSV
+
+                        </button>
+
+                        <button class="export-btn" onclick="exportPDF()">
+
+                            ↓ PDF
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <table id="vlsmTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Hosts Req.</th>
+                            <th>Hosts Disp.</th>
+                            <th>Red/CIDR</th>
+                            <th>Broadcast</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="vlsmTbody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="block-diagram-panel">
+
+                <h2>
+                    // Mapa de Espacio de Direcciones
+                </h2>
+
+                <div id="blockDiagram"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../javascript/navbar.js"></script>
+    <script src="../javascript/vlsm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+
+</html>

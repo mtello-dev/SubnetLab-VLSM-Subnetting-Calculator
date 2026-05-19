@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SubnetLab — Calculadora de Subnetting</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+
+    <div id="nav-placeholder"></div>
+
+    <div class="container">
+
+        <header id="inicio">
+
+            <div class="logo-badge">∑</div>
+
+            <div class="header-text">
+                <h1>Subnet<span>Lab</span></h1>
+                <p>// calculadora de subnetting</p>
+            </div>
+
+        </header>
+
+        <div class="input-panel" data-section="config">
+
+            <h2>// Configuración</h2>
+
+            <div class="input-row">
+
+                <div class="field">
+                    <label>Dirección IP</label>
+                    <input type="text" id="ipInput" placeholder="192.168.1.0" maxlength="15">
+                </div>
+
+                <div class="field">
+                    <label>Prefijo CIDR / Máscara</label>
+
+                    <select id="cidrSelect">
+
+                        <option value="24" selected>/24 — 255.255.255.0</option>
+                        <option value="25">/25 — 255.255.255.128</option>
+                        <option value="26">/26 — 255.255.255.192</option>
+                        <option value="27">/27 — 255.255.255.224</option>
+                        <option value="28">/28 — 255.255.255.240</option>
+                        <option value="29">/29 — 255.255.255.248</option>
+                        <option value="30">/30 — 255.255.255.252</option>
+                        <option value="31">/31 — 255.255.255.254</option>
+                        <option value="32">/32 — 255.255.255.255</option>
+
+                    </select>
+
+                </div>
+
+                <button class="calc-btn" onclick="calculate()">
+                    Calcular →
+                </button>
+
+            </div>
+
+            <div class="error-msg" id="errorMsg">
+                ⚠ IP inválida.
+            </div>
+
+        </div>
+
+        <div class="results-grid" id="resultsGrid" data-section="resultados"></div>
+
+        <div class="binary-section" id="binarySection" data-section="binario">
+
+            <h2>// Representación Binaria</h2>
+
+            <div id="binaryRows"></div>
+
+        </div>
+
+        <div class="range-section" id="rangeSection" data-section="rango">
+
+            <h2>// Rango de la Subred</h2>
+
+            <div class="range-bar">
+
+                <div class="range-seg seg-network">
+                    RED
+                </div>
+
+                <div class="range-seg seg-hosts">
+                    HOSTS UTILIZABLES
+                </div>
+
+                <div class="range-seg seg-broadcast">
+                    BC
+                </div>
+
+            </div>
+
+            <div class="range-labels">
+
+                <span id="labelNet"></span>
+
+                <span id="labelHosts"></span>
+
+                <span id="labelBc"></span>
+
+            </div>
+
+        </div>
+
+        <div class="subnets-section" id="subnetsSection" data-section="division">
+
+            <div class="subnets-header">
+
+                <h2>// División de Subredes</h2>
+
+                <div class="split-controls">
+
+                    <label>Dividir en</label>
+
+                    <select id="splitSelect" onchange="renderSplitTable()">
+
+                        <option value="2">2 subredes</option>
+                        <option value="4">4 subredes</option>
+                        <option value="8">8 subredes</option>
+                        <option value="16">16 subredes</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div id="subnetsTableWrapper"></div>
+
+        </div>
+
+        <div class="cheatsheet" data-section="referencia">
+
+            <h2>// Tabla CIDR / Máscara</h2>
+
+            <div class="cheat-grid" id="cheatGrid"></div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-top">
+
+                <h3>SubnetLab</h3>
+
+                <p>Herramienta visual para cálculo de subnetting y VLSM</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/script.js"></script>
+
+</body>
+
+</html>
