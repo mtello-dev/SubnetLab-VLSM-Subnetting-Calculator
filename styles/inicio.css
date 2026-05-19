@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#b3bac6;
+    color:#222;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#0d1b2a;
+    color:white;
+
+    padding:20px 8%;
+}
+
+.navbar h2{
+    color:#4cc9f0;
+}
+
+.navbar ul{
+
+    display:flex;
+    gap:25px;
+
+    list-style:none;
+}
+
+.navbar a{
+
+    color:white;
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.navbar a:hover{
+
+    color:#4cc9f0;
+}
+
+/* HERO */
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:50px;
+
+    padding:70px 8%;
+}
+
+.hero-text{
+
+    flex:1;
+}
+
+.hero-text h1{
+
+    font-size:3rem;
+
+    color:#0d1b2a;
+
+    margin-bottom:20px;
+}
+
+.hero-text p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#0077b6;
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 25px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#023e8a;
+}
+
+.hero-img{
+
+    flex:1;
+    text-align:center;
+}
+
+.hero-img img{
+
+    width:100%;
+    max-width:500px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/* FEATURES */
+
+.features{
+
+    padding:70px 8%;
+
+    text-align:center;
+}
+
+.features h2{
+
+    color:#0d1b2a;
+
+    margin-bottom:45px;
+}
+
+.cards{
+
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+
+    background:white;
+
+    width:320px;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+}
+
+.card h3{
+
+    color:#0077b6;
+
+    margin-bottom:15px;
+}
+
+/* ABOUT VLSM */
+
+.about-vlsm{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+    padding:70px 8%;
+}
+
+.about-text{
+
+    flex:1;
+}
+
+.about-text h2{
+
+    color:#0d1b2a;
+
+    margin-bottom:20px;
+}
+
+.about-text p{
+
+    line-height:1.9;
+
+    margin-bottom:15px;
+}
+
+.about-img{
+
+    flex:1;
+    text-align:center;
+}
+
+.about-img img{
+
+    width:100%;
+    max-width:500px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#0d1b2a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .hero,
+    .about-vlsm{
+
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .navbar{
+
+        flex-direction:column;
+        gap:20px;
+    }
+
+}
