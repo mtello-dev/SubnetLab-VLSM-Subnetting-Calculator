@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Acerca de — SubnetLab</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <div class="container">
+
+    <header id="inicio">
+      <div class="logo-badge">ℹ</div>
+
+      <div class="header-text">
+        <h1>Acerca de <span>SubnetLab</span></h1>
+        <p>// información del proyecto</p>
+      </div>
+    </header>
+
+    <section class="input-panel" data-section="proyecto">
+      <h2>// Sobre el proyecto</h2>
+
+      <p style="line-height:1.7; color:var(--text); font-size:15px;">
+        <strong>SubnetLab</strong> es una aplicación web interactiva diseñada para facilitar el cálculo de subnetting y VLSM en redes IPv4. 
+        Su objetivo es ayudar a estudiantes y usuarios de redes a comprender de forma visual conceptos como dirección de red, máscara, wildcard, broadcast, hosts utilizables y división de subredes.
+      </p>
+    </section>
+
+    <section class="input-panel" data-section="funciones">
+      <h2>// Funcionalidades principales</h2>
+
+      <div class="results-grid">
+
+        <div class="result-card visible card-network">
+          <div class="card-label">Subnetting</div>
+          <div class="card-value">Cálculo IPv4</div>
+          <div class="card-sub">Red, broadcast, máscara, wildcard y hosts.</div>
+        </div>
+
+        <div class="result-card visible card-wildcard">
+          <div class="card-label">VLSM</div>
+          <div class="card-value">Asignación variable</div>
+          <div class="card-sub">Distribución eficiente de subredes por cantidad de hosts.</div>
+        </div>
+
+        <div class="result-card visible card-hosts">
+          <div class="card-label">Visualización</div>
+          <div class="card-value">Binario</div>
+          <div class="card-sub">Representación de bits de red y bits de host.</div>
+        </div>
+
+        <div class="result-card visible card-cidr">
+          <div class="card-label">Exportación</div>
+          <div class="card-value">CSV / PDF</div>
+          <div class="card-sub">Exportación de resultados para documentación.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="input-panel" data-section="tecnologias">
+      <h2>// Tecnologías utilizadas</h2>
+
+      <div class="cheat-grid">
+
+        <div class="cheat-item">
+          <div class="cheat-cidr">HTML</div>
+          <div class="cheat-right">
+            <div class="cheat-mask">Estructura</div>
+            <div class="cheat-hosts">Interfaz web</div>
+          </div>
+        </div>
+
+        <div class="cheat-item">
+          <div class="cheat-cidr">CSS</div>
+          <div class="cheat-right">
+            <div class="cheat-mask">Diseño visual</div>
+            <div class="cheat-hosts">Responsive UI</div>
+          </div>
+        </div>
+
+        <div class="cheat-item">
+          <div class="cheat-cidr">JS</div>
+          <div class="cheat-right">
+            <div class="cheat-mask">Lógica</div>
+            <div class="cheat-hosts">Cálculos dinámicos</div>
+          </div>
+        </div>
+
+        <div class="cheat-item">
+          <div class="cheat-cidr">VLSM</div>
+          <div class="cheat-right">
+            <div class="cheat-mask">Redes</div>
+            <div class="cheat-hosts">Optimización IP</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="input-panel" data-section="objetivo">
+      <h2>// Objetivo</h2>
+
+      <p style="line-height:1.7; color:var(--text); font-size:15px;">
+        El objetivo de SubnetLab es ofrecer una herramienta educativa, visual y práctica para el aprendizaje de redes, permitiendo realizar cálculos de subnetting y VLSM de manera clara, rápida e interactiva.
+      </p>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+
+      <div class="footer-top">
+        <h3>SubnetLab</h3>
+        <p>Herramienta visual para cálculo de subnetting y VLSM</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="../index.html">Calculadora</a>
+        <a href="vlsm.html">VLSM</a>
+        <a href="acerca.html">Acerca de</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> SubnetLab</p>
+        <p>Desarrollado por M.T., J.C., G.A.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../javascript/navbar.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
